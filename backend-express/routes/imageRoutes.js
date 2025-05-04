@@ -24,7 +24,7 @@ router.post('/upload', async (req, res) => {
     formData.append('file', image.data, image.name);
 
     // Forward the image to FastAPI
-    const fastapiResponse = await axios.post('http://127.0.0.1:8000/predict', formData, {
+    const fastapiResponse = await axios.post('https://tuberculosis-fastapi.onrender.com/predict', formData, {
       headers: {
         ...formData.getHeaders(),
       },
@@ -36,7 +36,7 @@ router.post('/upload', async (req, res) => {
   } catch (error) {
     console.error('Error forwarding to FastAPI:', error.message);
     if (error.code === 'ECONNREFUSED') {
-      console.error('FastAPI server is not running or not accessible at http://127.0.0.1:8000');
+      console.error('FastAPI server is not running or not accessible at https://tuberculosis-fastapi.onrender.com');
       return res.status(500).json({
         status: 'error',
         message: 'Failed to connect to prediction server. Please ensure the backend is running.',
