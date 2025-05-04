@@ -101,7 +101,7 @@ function App() {
         try {
           newProgress[index] = 50;
           setProgress([...newProgress]);
-          const res = await axios.post('http://localhost:5000/api/images/upload', formData, {
+          const res = await axios.post('https://tuberculosis-express-backend.onrender.com/api/images/upload', formData, {
             headers: { 'Content-Type': 'multipart/form-data' },
           });
 
