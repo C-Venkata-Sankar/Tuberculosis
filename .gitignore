@@ -1,0 +1,26 @@
+# Node.js dependencies
+node_modules
+frontend/node_modules
+backend-express/node_modules
+
+# Python virtual environments
+.venv
+venv
+backend-fastapi/venv
+backend-fastapi/.venv
+
+# Python cache files
+__pycache__
+*.pyc
+
+# Environment files
+.env
+frontend/.env
+backend-express/.env
+backend-fastapi/.env
+
+# Build outputs
+frontend/build
+
+# Large model files
+backend-fastapi/yolov8n.pt
